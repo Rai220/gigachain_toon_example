@@ -102,6 +102,15 @@ def extract_toon_document(text: str) -> str:
 def parse_toon_response(response: Any) -> InventoryInsight:
     toon_text = extract_toon_document(response_content_to_text(response))
     decoded = toon_decode(toon_text)
+    if isinstance(decoded, dict) and isinstance(decoded.get("reasons"), str):
+        decoded = {
+            **decoded,
+            "reasons": [
+                reason.strip()
+                for reason in re.split(r"[,;\n]+", decoded["reasons"])
+                if reason.strip()
+            ],
+        }
     return InventoryInsight.model_validate(decoded)
 
 
