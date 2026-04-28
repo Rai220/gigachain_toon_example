@@ -21,6 +21,20 @@ Other Python TOON libraries worth knowing about:
 - `py-toon-format`: has helpers such as `compare_sizes()` and validation.
 - `toons`: Rust-backed parser/serializer exposed to Python.
 
+## TOON benchmark note
+
+The [TOON Retrieval Accuracy Benchmark](https://toonformat.dev/guide/benchmarks.html)
+checks how well a model reads structured data in different formats and answers
+questions about that data. In the 1,154-task run, TOON retrieval accuracy was:
+
+| Model | Accuracy |
+| --- | ---: |
+| Gemini 3 Flash Preview | 97.1% |
+| GPT-5 Nano | 87.9% |
+| Claude Haiku 4.5 | 56.2% |
+| Grok 4.1 Fast Non-Reasoning | 55.4% |
+| GigaChat 3 Ultra | 55.1% |
+
 ## What is actually sent to the API
 
 The example really sends TOON to GigaChat. `build_inventory_context()` creates a
