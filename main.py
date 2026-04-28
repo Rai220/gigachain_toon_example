@@ -27,7 +27,7 @@ format for JSON-like data:
 - object fields are written as "key: value";
 - nested objects are indented under their key;
 - arrays can be written as "key[n]: item1,item2" or tabular rows such as
-  "items[2,]{field_a,field_b}:" followed by rows.
+  "items[2,]{{field_a,field_b}}:" followed by rows.
 
 Return exactly one TOON document and nothing else. Do not wrap it in Markdown.
 Use this response schema:
